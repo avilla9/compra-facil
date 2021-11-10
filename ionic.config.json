@@ -1,0 +1,8 @@
+{
+  "name": "CompraFacil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "dd1692b8"
+}
