@@ -28,29 +28,15 @@ export class HomeComponent implements OnInit {
             .getProductList(this.page)
             .subscribe((res) => {
                 console.log(res);
-                this.Products = res;
+                this.Products = [...this.Products, ...res];
                 if (isFirstLoad)
                     event.target.complete();
                 this.page++;
             });
     }
 
-    logScrolling(event) {
-        console.log("logScrollStart : When Scroll Starts", event.detail.scrollTop);
-        this.top = event.detail.scrollTop;
-    }
-
-    ScrollToPoint(X, Y) {
-        this.content.scrollToPoint(X, Y, 200);
-    }
-
     doInfinite(event) {
         console.log("Load more: ", this.top);
         this.ionViewDidEnter(true, event);
-        this.ScrollToPoint(0, this.top - 200);
-    }
-
-    toggleInfiniteScroll() {
-        this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
     }
 }

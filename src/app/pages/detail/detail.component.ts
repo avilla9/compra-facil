@@ -11,6 +11,7 @@ export class DetailComponent implements OnInit {
 
   id: any;
   Product: any = [];
+  lastItemTop: any;
 
   constructor(
     private woocommerceService: WoocommerceService,

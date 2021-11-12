@@ -1,15 +1,36 @@
 <ion-content>
-  <ion-list class="ios list-ios hydrated">
-    <ion-list-header class="ios hydrated">
-      <button [routerLink]="['/home']">></button>
-      {{Product.name}}
-    </ion-list-header>
-  </ion-list>
+  <ion-header class="title-products">
+    COMPRA FÁCIL
+    <ion-toolbar>
+      <ion-title>Detalles del producto</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <!-- fab placed to the bottom start -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-product">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <div class="product-list-container detail-container">
+    <div class="product-detail-title">
+      {{Product.name}}
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img *ngFor="let image of Product.images" src="{{image.src}}" class="image-detail">
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="information-container">
+          <p>Precio: ${{Product.price}}</p>
+          <p style="text-align: center;"><b>Descripción</b></p>
+          <div [innerHTML]="Product.short_description"></div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
 </ion-content>
+<div class="footer-container">
+  <div class="go-back" [routerLink]="['/home']">
+    Volver al listado
+  </div>
+</div>
