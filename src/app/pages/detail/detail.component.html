@@ -1,0 +1,15 @@
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      <button [routerLink]="['/home']">></button>
+      {{Product.name}}
+    </ion-list-header>
+  </ion-list>
+
+  <!-- fab placed to the bottom start -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-product">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
